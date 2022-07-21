@@ -1,0 +1,11 @@
+sudo hciconfig hci0 up #파이 블루투스기능 활성화
+
+sudo hciconfig hci0 leadv #broadcast 설정 on
+
+sudo hciconfig hci0 noscan #외부 블루투스 scan 중지
+
+sudo hcitool -i hci0 cmd 0x08 0x0008 1E 02 01 1A 1A FF 4C 00 02 15 11 22 33 44 55 66 77 88 99 00 AA BB CC DD EE FF 01 00 01 00 C8 00 # broadcast 데이터 설정
+
+#7번째줄 코드 그대로 복사붙혀넣기해도 상관x   비콘 스캐너에 UUID가 aabbccddeeff로 나오면 성공
+#sudo hcitool -i hci0 cmd 0x08 0x0008 1E 02 01 1A 1A FF 4C 00 02 15 (UUID)(Major)(Minor) C8 00
+#(UUID)는 16bytes작성      (Major)및(Minor)값 각 2bytes작성
