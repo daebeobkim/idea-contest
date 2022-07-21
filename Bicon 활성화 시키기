@@ -9,3 +9,6 @@ sudo hcitool -i hci0 cmd 0x08 0x0008 1E 02 01 1A 1A FF 4C 00 02 15 11 22 33 44 5
 #7번째줄 코드 그대로 복사붙혀넣기해도 상관x   비콘 스캐너에 UUID가 aabbccddeeff로 나오면 성공
 #sudo hcitool -i hci0 cmd 0x08 0x0008 1E 02 01 1A 1A FF 4C 00 02 15 (UUID)(Major)(Minor) C8 00
 #(UUID)는 16bytes작성      (Major)및(Minor)값 각 2bytes작성
+
+출처
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=hahav000&logNo=221324802497
