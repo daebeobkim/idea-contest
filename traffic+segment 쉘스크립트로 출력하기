@@ -1,0 +1,88 @@
+#!/bin/sh
+echo "test on gpio 22"
+gpio -g mode 22 output #red
+gpio -g mode 6  output #green
+
+gpio -g mode 27  output #a
+gpio -g mode 17  output #b
+gpio -g mode 19  output #g
+gpio -g mode 24  output #c
+gpio -g mode 20  output #d
+gpio -g mode 21  output #e
+gpio -g mode 13  output #f
+
+gpio -g write 22 0
+gpio -g write 6 0
+
+gpio -g write 27 0
+gpio -g write 17 0
+gpio -g write 19 0
+gpio -g write 24 0
+gpio -g write 20 0
+gpio -g write 21 0
+gpio -g write 13 0
+
+
+while true; do
+        gpio -g write 22 1
+        sleep 5
+        gpio -g write 22 0
+        gpio -g write 6 1
+        sleep 5
+       #5
+        gpio -g write 27 1
+        gpio -g write 13 1
+        gpio -g write 19 1
+        gpio -g write 24 1
+        gpio -g write 20 1
+        sleep 1
+        gpio -g write 27 0
+        gpio -g write 13 0
+        gpio -g write 19 0
+        gpio -g write 24 0
+        gpio -g write 20 0
+        #4
+        gpio -g write 13 1
+        gpio -g write 19 1
+        gpio -g write 17 1
+        gpio -g write 24 1
+        sleep 1
+        gpio -g write 13 0
+        gpio -g write 19 0
+        gpio -g write 17 0
+        gpio -g write 24 0
+        #3
+        gpio -g write 27 1
+        gpio -g write 17 1
+        gpio -g write 19 1
+        gpio -g write 24 1
+        gpio -g write 20 1
+        sleep 1
+        gpio -g write 27 0
+        gpio -g write 17 0
+        gpio -g write 19 0
+        gpio -g write 24 0
+        gpio -g write 20 0
+        #2
+        gpio -g write 27 1
+        gpio -g write 17 1
+        gpio -g write 19 1
+        gpio -g write 20 1
+        gpio -g write 21 1
+        sleep 1
+        gpio -g write 27 0
+        gpio -g write 17 0
+        gpio -g write 19 0
+        gpio -g write 20 0
+        gpio -g write 21 0
+        #1
+        gpio -g write 13 1
+        gpio -g write 21 1
+        sleep 1
+        gpio -g write 13 0
+        gpio -g write 21 0
+
+        gpio -g write 6 0
+done
+
+        
