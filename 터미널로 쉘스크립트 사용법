@@ -1,0 +1,19 @@
+$ sudo apt-get update
+
+$ sudo apt-get upgrade
+
+$ git clone git://git.drogen.net/wiringPi
+
+$ cd wiringPi
+
+$ git pull origin
+
+$ ./build
+#순서대로 선언을 해준다
+# 5번째 줄 $ git clone git://git.drogen.net/wiringPi은 현재 2016년도 버전이므로 최신 버전인 git clone https://github.com/WiringPi/WiringPi.git로 설치할것(언제든지 바뀔수 있으니 
+# https://github.com/WiringPi/WiringPi로 들어가서 주소확인
+
+#cd WiringPi 7번째줄 대문자 조심하고 오류가 계속날 시 ls를 사용해 주소 확인하기
+
+$ gpio readall
+# 이 코드로 
