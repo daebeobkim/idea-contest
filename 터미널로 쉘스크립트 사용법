@@ -16,4 +16,17 @@ $ ./build
 #cd WiringPi 7번째줄 대문자 조심하고 오류가 계속날 시 ls를 사용해 주소 확인하기
 
 $ gpio readall
-# 이 코드로 
+# 이 코드로 터미널 확인
+
+이후 nano testled.sh등으로 파일을 만든후
+
+예시
+#!/bin/sh
+echo "test on gpio 22"
+gpio -g mode 22 output
+gpio -g write 22 1
+sleep 1
+gpio -g write 22 0
+
+이후 sh testle.sh로 확인하면 끝
+
