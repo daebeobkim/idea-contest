@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title> 자바스크립터의 자료형</title>
+        <script language="javascript">
+            <!--
+                var test = 20
+                document.write("<h4>")
+                document.write("변수의 값을 출력합니다.<hr>")
+                document.write("=============>"+test)
+                document.write("<hr>주의:")
+                document.write("변수를 따옴표로 묶어서 사용하면 더이상 변수가 아니다.")
+                document.write("<br>=========> test")
+                document.write("<br>")
+                    //-->
+        </script>
+    </head>
+</html>
