@@ -1,0 +1,15 @@
+# eddystone URL변환 사이트 http://yencarnacion.github.io/eddystone-url-calculator/
+
+sudo hcitool -i hci0 cmd 0x08 0x0008 1B 02 01 06 03 03 AA FE 13 16 AA FE 10 00 02 67 6F 6F 2E 67 6C 2F 64  54 33 67 79 61 00 00 00 00
+#url 변환시킨 비콘화 코드
+
+wget https://github.com/google/eddystone/blob/master/eddystone-url/implementations/linux/advertise-url
+#구글에서 제공하느 url전송을 위한 코드 다운
+
+python advertise-url
+#프로그램 실행 후 되는지 확인
+
+#6~10은 현재 생략해도 되는것으로 판단
+
+
+
