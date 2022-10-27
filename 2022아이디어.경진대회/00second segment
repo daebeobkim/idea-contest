@@ -1,0 +1,176 @@
+import time
+import RPi.GPIO as GPIO
+import datetime
+from datetime import date
+
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
+GPIO.setup(22, GPIO.OUT)#red
+GPIO.setup(6, GPIO.OUT)#green
+
+GPIO.setup(19, GPIO.OUT)#a
+GPIO.setup(13, GPIO.OUT)#b
+
+GPIO.setup(20, GPIO.OUT)#c
+GPIO.setup(23, GPIO.OUT)#d
+GPIO.setup(21, GPIO.OUT)#e
+GPIO.setup(26, GPIO.OUT)#f
+GPIO.setup(17, GPIO.OUT)#g
+GPIO.setup(27, GPIO.OUT)#d1
+GPIO.setup(12, GPIO.OUT)#d2
+
+try:
+    GPIO.output(22, 0)#red
+    GPIO.output(6, 0)#green
+    
+    GPIO.output(19, 0)#a
+    GPIO.output(13, 0)#b
+    GPIO.output(20, 0)#c
+    GPIO.output(23, 0)#d
+    GPIO.output(21, 0)#e
+    GPIO.output(26, 0)#f
+    GPIO.output(17, 0)#g
+    GPIO.output(27, 0)#d1       
+    GPIO.output(12, 0)#d2
+    while(True):
+        now = datetime.datetime.now()
+        if now.second == 00:{
+        GPIO.output(22, 1)#red
+        }
+        if now.second == 5:
+            GPIO.output(6, 1)#green
+            GPIO.output(22, 0)#red
+        
+        #10
+        if now.second == 5:
+            for i in range(500):
+                GPIO.output(27, 1)#d1    reverse
+                GPIO.output(19, 1)#a
+                GPIO.output(23, 1)#d death
+                GPIO.output(21, 1)#e
+                GPIO.output(26, 1)#f
+                GPIO.output(17, 1)#g 
+                time.sleep(0.001)
+                GPIO.output(27, 0)#d1    reverse
+                GPIO.output(19, 0)#a
+                GPIO.output(23, 0)#d death
+                GPIO.output(21, 0)#e
+                GPIO.output(26, 0)#f
+                GPIO.output(17, 0)#g
+                time.sleep(0.001)
+                GPIO.output(12, 1)#d2    reverse
+                GPIO.output(17, 1)#b
+
+                time.sleep(0.001)
+                GPIO.output(12, 0)#d2    reverse
+                GPIO.output(17, 0)#b
+        
+            #9
+            GPIO.output(27, 0)
+            GPIO.output(12, 1)#d2
+            GPIO.output(21, 1)#e
+            GPIO.output(23, 1)#d
+            time.sleep(1)
+            GPIO.output(12, 0)#d2
+            GPIO.output(21, 0)#e
+            GPIO.output(23, 0)#d
+            #8
+            GPIO.output(12, 1)#d2
+            GPIO.output(19, 0)#a
+            GPIO.output(13, 0)#b
+            GPIO.output(20, 0)#c death
+            GPIO.output(23, 0)#d death
+            GPIO.output(21, 0)#e
+            GPIO.output(26, 0)#f
+            GPIO.output(17, 0)#g
+            time.sleep(1)
+            #7
+            GPIO.output(12, 1)#d2
+            GPIO.output(17, 1)#g
+            GPIO.output(21, 1)#e
+            GPIO.output(23, 1)#d
+            time.sleep(1)
+            GPIO.output(17, 0)#g
+            GPIO.output(21, 0)#e
+            GPIO.output(23, 0)#d
+            #6
+            GPIO.output(12, 1)#d2
+            GPIO.output(13, 1)#b
+            time.sleep(1)
+            GPIO.output(13, 0)#b
+            #5
+            GPIO.output(12, 1)#d2
+            GPIO.output(13, 1)#b
+            GPIO.output(21, 1)#e
+            time.sleep(1)
+            GPIO.output(13, 0)#b
+            GPIO.output(21, 0)#e
+            #4
+            GPIO.output(12, 1)#d2
+            GPIO.output(19, 1)#a
+            GPIO.output(21, 1)#e
+            GPIO.output(23, 1)#d
+            time.sleep(1)
+            GPIO.output(19, 0)#a
+            GPIO.output(21, 0)#e
+            GPIO.output(23, 0)#d
+            #3
+            GPIO.output(12, 1)#d2
+            GPIO.output(21, 1)#e
+            GPIO.output(26, 1)#f
+            time.sleep(1)
+            GPIO.output(21, 0)#e
+            GPIO.output(26, 0)#f
+            #2
+            GPIO.output(12, 1)#d2
+            GPIO.output(26, 1)#f
+            GPIO.output(20, 1)#c
+            time.sleep(1)
+            GPIO.output(26, 0)#f
+            GPIO.output(20, 0)#c
+            #1
+            GPIO.output(19, 1)#a
+            GPIO.output(23, 1)#d death
+            GPIO.output(21, 1)#e
+            GPIO.output(26, 1)#f
+            GPIO.output(17, 1)#g
+            time.sleep(1)
+            GPIO.output(19, 0)#a
+            GPIO.output(23, 0)#d death
+            GPIO.output(21, 0)#e
+            GPIO.output(26, 0)#f
+            GPIO.output(17, 0)#g
+        
+            GPIO.output(19, 0)#a
+            GPIO.output(13, 0)#b
+            GPIO.output(20, 0)#c death
+            GPIO.output(23, 0)#d death
+            GPIO.output(21, 0)#e
+            GPIO.output(26, 0)#f
+            GPIO.output(17, 0)#g
+            GPIO.output(27, 0)
+            GPIO.output(12, 0)
+            GPIO.output(6, 0)
+        
+        
+        
+        
+        """
+        time.sleep(0.01)
+        GPIO.output(19, 0)#a
+        GPIO.output(13, 0)#b
+        GPIO.output(20, 0)#c death
+        GPIO.output(23, 0)#d death
+        GPIO.output(21, 0)#e
+        GPIO.output(26, 0)#f
+        GPIO.output(17, 0)#g
+        GPIO.output(27, 0)
+        GPIO.output(12, 0)
+        """
+except KeyboardInterrupt:
+    GPIO.cleanup()
+    print("Interrupt!! Quit!!")
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
