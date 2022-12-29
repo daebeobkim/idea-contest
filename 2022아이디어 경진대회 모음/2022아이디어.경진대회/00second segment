@@ -1,4 +1,4 @@
-import time
+import time #추후 수정예정
 
 import RPi.GPIO as GPIO
 import datetime
